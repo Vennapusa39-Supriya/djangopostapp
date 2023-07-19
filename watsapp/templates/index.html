@@ -1,0 +1,24 @@
+{% block content %}
+<h1>Hello Rayalaseema</h1>
+<h3>Page loaded successfully</h3>
+<br/>
+<div class="card" style="width: 16rem; padding:5px; margin:5px;">
+{% for post in post %}
+<ul>
+    <li>
+        <img height="200" width="200" src ="{{post.image_url}}" class="card-img-top" alt="image">
+        <div class="card-body"> 
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.story|slice:"0:50"}}...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{post.created_at}}</small>
+            </div>
+                              
+    </li><br/>
+</ul>
+{% endfor %}
+</div>
+{% endblock %}
+
